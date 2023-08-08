@@ -1,26 +1,18 @@
 name: Build and push image to ECR
-
 on:
   push:
     branches:
       - main
-#   pull_request:
-# permissions:
-#       contents: read # This is required for actions/checkout
-  
-jobs:
-  
-  build:
-    
+
+jobs:  
+  build:  
     name: Build docker image and push to ECR 
-    runs-on: ubuntu-latest
-
-   
+    runs-on: ubuntu-latest   
+    
     steps:
-
     - name: Check out code
       uses: actions/checkout@v2
-    
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
